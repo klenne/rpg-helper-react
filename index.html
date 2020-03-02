@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="shortcut icon" href="media/img/ico.png" />
+    <title>Battle Assistant</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/reset.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <script src="https://kit.fontawesome.com/9280d503ee.js" crossorigin="anonymous"></script>
+    <script src='js/jquery.js'></script>
+    <script src='js/FileSaver.js'></script>
+    <script src='js/main.js' defer></script>
+
+
+</head>
+
+<body>
+    <H1>assistente de batalhas</H1>
+    <div class="borders">
+        <section id="party" class="section-borders">
+            <header class="header-section">
+                <h2>party</h2>
+
+                <div onclick ="javascript:document.getElementById('file_upload').click();"class="btns" id="btnImportParty">
+                    <i class="fas fa-file-download"></i>
+                    <span>Importar Party</span>
+                    <input type="file" name="file_upload" id="file_upload" />
+
+                </div>
+
+                <div class="btns" id="btnExportParty">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Exportar Party</span>
+
+                </div>
+                <div class="btns" id="btnNewParty">
+                    <i class="fas fa-plus-square"></i>
+                    <span>Adicionar novo a Party</span>
+
+                </div>
+
+
+            </header>
+            <div class="hr">
+                <div class="border-hr"></div>
+                <i class="fas fa-dice-d20"></i>
+                <div class="border-hr"></div>
+            </div>
+            <div id="cards-party" class="cards">
+
+
+
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>
