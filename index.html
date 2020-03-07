@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/9280d503ee.js" crossorigin="anonymous"></script>
     <script src='js/jquery.js'></script>
     <script src='js/FileSaver.js'></script>
+    <script src='js/health.js'></script>
     <script src='js/main.js' defer></script>
 
 
@@ -24,7 +25,8 @@
             <header class="header-section">
                 <h2>party</h2>
 
-                <div onclick ="javascript:document.getElementById('file_upload').click();"class="btns" id="btnImportParty">
+                <div onclick="javascript:document.getElementById('file_upload').click();" class="btns"
+                    id="btnImportParty">
                     <i class="fas fa-file-download"></i>
                     <span>Importar Party</span>
                     <input type="file" name="file_upload" id="file_upload" />
@@ -41,9 +43,8 @@
                     <span>Adicionar novo a Party</span>
 
                 </div>
-
-
             </header>
+
             <div class="hr">
                 <div class="border-hr"></div>
                 <i class="fas fa-dice-d20"></i>
@@ -51,12 +52,66 @@
             </div>
             <div id="cards-party" class="cards">
 
-
-
+            
             </div>
 
         </section>
+        <div class="modal-party" id="modalParty">
+            <div class="modal-out">
+                <div class="modal-in">
+                    <div class="center-h2">
+                        <h2>Adicionar Imagem</h2>
+                    </div>
+                    <div class="url">
+                        <span>Url:</span><input id="urlImage" type="text">
+                    </div>
+                    <div class="btns-modal">
+                        <i id="AddImg" class="fas fa-save"></i>
+                        <i id="fechareModal" class="fas fa-window-close"></i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <section id="enemies" class="section-borders">
+            <header class="header-section">
+                <h2>Enemies</h2>
+                <div onclick="javascript:document.getElementById('file_uploadEnemie').click();" class="btns"
+                    id="btnImportEnemies">
+                    <i class="fas fa-file-download"></i>
+                    <span>Importar Enemies</span>
+                    <input type="file" name="file_uploadEnemie" id="file_uploadEnemie" />
+
+                </div>
+
+                <div class="btns" id="btnExportEnemies">
+                    <i class="fas fa-file-upload"></i>
+                    <span>Exportar Enemies</span>
+
+                </div>
+                <div class="btns" id="btnNewEnemie">
+                    <i class="fas fa-plus-square"></i>
+                    <span>Adicionar novo Enemie</span>
+
+                </div>
+            </header>
+
+            <div class="hr">
+                <div class="border-hr"></div>
+                <i class="fas fa-dragon"></i>
+                <div class="border-hr"></div>
+            </div>
+            <div id="cards-enemies" class="cards">
+
+            </div>
+        </section>
     </div>
+    <!-- 
+    <section id="charts">
+        <h2>Estatísticas para nerds</h2>
+    </section> -->
 </body>
 
 </html>
