@@ -13,12 +13,11 @@ $("#btnNewParty").click(function () {
 
     let template = `
  
-
     <div id="card${numeroCard}" class="card-out">
     <div class="card-in">
 
         <div class="title-card">
-            <label>Jogador:</label><span spellcheck="false" contenteditable class="inputs"></span>
+            <label>Jogador:</label><span spellcheck="false" contenteditable class="inputs input-px"></span>
             <i onclick="excluir('${numeroCard}')" class="fas fa-trash"></i>
             <i onclick="salvar()" class="fas fa-save"></i>
         </div>
@@ -27,7 +26,7 @@ $("#btnNewParty").click(function () {
                 src="media/img/57-572389_twenty-sided-dice-20-sided-dice-png-clipart.png">
         </div>
         <div class="label-n-input">
-            <label>Nome-Char:</label><span spellcheck="false" contenteditable class="inputs"></span>
+            <label>Nome-Char:</label><span spellcheck="false" contenteditable class="inputs input-px"></span>
         </div>
         <div class="label-n-input">
             <label>Classe:</label><span spellcheck="false" contenteditable class="inputs"></span>
@@ -36,26 +35,31 @@ $("#btnNewParty").click(function () {
             <label>Armour:</label><span spellcheck="false" contenteditable class="inputs"></span>
         </div>
         <div class="abilities">
-            <div class="abilitie-inside border-abilitie">
+            <div class="abilitie-inside">
                 <span>STR</span>
                 <span spellcheck="false" contenteditable class="inputs-abilities"></span>
             </div>
-            <div class="abilitie-inside border-abilitie">
+            <div class="border-abilitie"></div>
+            <div class="abilitie-inside">
                 <span>DEX</span>
                 <span spellcheck="false" contenteditable class="inputs-abilities"></span>
             </div>
-            <div class="abilitie-inside border-abilitie">
+            <div class="border-abilitie"></div>
+            <div class="abilitie-inside">
                 <span>CON</span>
                 <span spellcheck="false" contenteditable class="inputs-abilities"></span>
             </div>
-            <div class="abilitie-inside border-abilitie">
+            <div class="border-abilitie"></div>
+            <div class="abilitie-inside">
                 <span>INT</span>
-                <span spellcheck="false border-abilitie" contenteditable class="inputs-abilities"></span>
+                <span spellcheck="false" contenteditable class="inputs-abilities"></span>
             </div>
-            <div class="abilitie-inside border-abilitie">
+            <div class="border-abilitie"></div>
+            <div class="abilitie-inside">
                 <span>WIS</span>
                 <span spellcheck="false" contenteditable class="inputs-abilities"></span>
             </div>
+            <div class="border-abilitie"></div>
             <div class="abilitie-inside">
                 <span>CHA</span>
                 <span spellcheck="false" contenteditable class="inputs-abilities"></span>
@@ -77,8 +81,8 @@ $("#btnNewParty").click(function () {
             <label>Debufs:</label><span spellcheck="false" contenteditable class="inputs"></span>
         </div>
     </div>
-</div>
-
+</div> 
+  
 
    `
 
@@ -91,8 +95,8 @@ let imagemId
 function carregarImagem(idImagem) {
     imagemId = idImagem
     $("#modalParty").css("display", "flex")
-    let pos=$("#modalParty").position().top-1000
-    $('html, body').animate({ 'scrollTop' :pos  }, 1);
+    let pos = $("#modalParty").position().top - 1000
+    $('html, body').animate({ 'scrollTop': pos }, 1);
 
 }
 
@@ -106,7 +110,7 @@ $("#AddImg").click(function () {
     let url = $("#urlImage").val()
     img.src = url;
     $("#urlImage").val("")
-    
+
     $("#modalParty").css("display", "none")
 });
 
@@ -142,7 +146,7 @@ $("#btnExportParty").click(function () {
 
 $("#btnImportParty").click(function () {
 
-
+    var html=$("#cards-party").html()
     //Check the support for the File API support
     if (window.File && window.FileReader && window.FileList && window.Blob) {
         let fileSelected = document.getElementById('file_upload')
@@ -155,18 +159,25 @@ $("#btnImportParty").click(function () {
             if (fileTobeRead.type.match(fileExtension)) {
                 //Initialize the FileReader object to read the 2file
                 let fileReader = new FileReader()
+      
+  
+                fileReader.readAsText(fileTobeRead)
+
                 fileReader.onload = function (e) {
                     let fileContents = document.getElementById('cards-party')
-                    let htmlAtual = $('#cards-party').html()
-                    fileContents.innerHTML = htmlAtual + fileReader.result
+                    fileContents.innerHTML = fileReader.result+html
                 }
-                fileReader.readAsText(fileTobeRead)
+              
+
+         
+
             }
             else {
                 alert("Por favor selecione arquivo texto")
             }
 
         }, false)
+        
     }
     else {
         alert("Arquivo(s) não suportado(s)")
@@ -182,30 +193,28 @@ $("#btnNewEnemie").click(function () {
 
     let template = `
  
-
-    <div id="card${numeroCard}" class="card-out cardEnemie">
-    <div class="card-in">
-
-        <div class="title-card">
-            <span spellcheck="false" contenteditable class="inputs ,
-            "></span> 
-            <i onclick="excluirEnemie('${numeroCard}')" class="fas fa-trash"></i>
-            <i onclick="salvarEnemies()" class="fas fa-save"></i>
-        </div>
-        <div class="center-image-char" onclick="carregarImagem('imagem${numeroCard}')">
-            <img class="image-char" id="imagem${numeroCard}" src="media/img/beholder.png">
-        </div>
-        <div class="label-n-input">
-            <label>Vida:</label><span spellcheck="false" contenteditable class="inputs"  onkeypress="vida(event,'${numeroCard}')" id="vida${numeroCard}" ></span> 
-        </div>
-        <div class="label-n-input">
-            <label>Buffs:</label><span spellcheck="false" contenteditable class="inputs"></span> 
-        </div>
-        <div class="label-n-input">
-            <label>Debufs:</label><span spellcheck="false" contenteditable class="inputs"></span> 
-        </div>
-    </div>
-     </div>
+       <div id="card${numeroCard}" class="card-out cardEnemie">
+                    <div class="card-in">
+                        <div class="title-card">
+                            <span spellcheck="false" contenteditable class="inputs"></span>
+                            <i onclick="excluirEnemie('${numeroCard}')" class="fas fa-trash"></i>
+                            <i onclick="salvarEnemies()" class="fas fa-save"></i>
+                        </div>
+                        <div class="center-image-char" onclick="carregarImagem('imagem${numeroCard}')">
+                            <img class="image-char" id="imagem${numeroCard}" src="media/img/beholder.png">
+                        </div>
+                        <div class="label-n-input">
+                            <label>Vida:</label><span spellcheck="false" contenteditable class="inputs"
+                                onkeypress="vida(event,'${numeroCard}')" id="vida${numeroCard}"></span>
+                        </div>
+                        <div class="label-n-input">
+                            <label>Buffs:</label><span spellcheck="false" contenteditable class="inputs"></span>
+                        </div>
+                        <div class="label-n-input">
+                            <label>Debufs:</label><span spellcheck="false" contenteditable class="inputs"></span>
+                        </div>
+                    </div>
+                </div>
 
 
    `
@@ -249,7 +258,7 @@ $("#btnExportEnemies").click(function () {
 
 $("#btnImportEnemies").click(function () {
 
-
+    var html=$("#cards-enemies").html()
     //Check the support for the File API support
     if (window.File && window.FileReader && window.FileList && window.Blob) {
         let fileSelected = document.getElementById('file_uploadEnemie')
@@ -264,8 +273,8 @@ $("#btnImportEnemies").click(function () {
                 let fileReader = new FileReader()
                 fileReader.onload = function (e) {
                     let fileContents = document.getElementById('cards-enemies')
-                    let htmlAtual = $('#cards-enemies').html()
-                    fileContents.innerHTML = htmlAtual + fileReader.result
+                
+                    fileContents.innerHTML =  fileReader.result+html
                 }
                 fileReader.readAsText(fileTobeRead)
             }

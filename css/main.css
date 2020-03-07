@@ -117,9 +117,13 @@ h1 {
 
 .title-card {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-weight: bolder;
     margin-bottom: 1em;
+}
+
+.title-card i{
+   margin-left: 0.5rem;
 }
 
 .title-card i:hover {
@@ -130,7 +134,11 @@ h1 {
     background-color: transparent;
     border: none;
     font-weight: bold;
-    width: 160px;
+    width: 80%;
+    margin-left: 1rem;
+}
+.input-px{
+    width: 160px;  
 }
 .input-menor{
     width: 50%;  
@@ -179,8 +187,8 @@ h1 {
     flex-direction: column;
     margin:1%;
     font-size: 0.9rem;  
-    padding-right: 2%;
-    padding-left: 2%;
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
     
 }
 .inputs-abilities{ 
@@ -192,7 +200,7 @@ h1 {
     
 }
 .border-abilitie{
-    border-right: 2px solid;
+    border-right: 3px solid;
 
 }
 #file_upload {
@@ -269,12 +277,12 @@ border: none;
 .cardEnemie{
     width: 400px;
 }
-.monsterName{
-   text-align: center;
-}
+
 .cardEnemie span{
     width: 80%;
 }
+
+
 #charts{
   display: flex;
   justify-content: center;
@@ -283,3 +291,6 @@ border: none;
 #charts h2{
     font-size: 2rem;
 }
+
+
+
