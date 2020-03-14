@@ -3,6 +3,9 @@ window.onload = function () {
     $("#cards-party").append(localStorage.getItem("tagsParty"))
     $("#cards-enemies").append(localStorage.getItem("tagsEnemies"))
     //localStorage.removeItem("tagsParty")
+    this.setDice(20)
+    this.setQuantity(1)
+    setMod(0)
 }
 
 
@@ -146,7 +149,7 @@ $("#btnExportParty").click(function () {
 
 $("#btnImportParty").click(function () {
 
-    var html=$("#cards-party").html()
+    var html = $("#cards-party").html()
     //Check the support for the File API support
     if (window.File && window.FileReader && window.FileList && window.Blob) {
         let fileSelected = document.getElementById('file_upload')
@@ -159,17 +162,17 @@ $("#btnImportParty").click(function () {
             if (fileTobeRead.type.match(fileExtension)) {
                 //Initialize the FileReader object to read the 2file
                 let fileReader = new FileReader()
-      
-  
+
+
                 fileReader.readAsText(fileTobeRead)
 
                 fileReader.onload = function (e) {
                     let fileContents = document.getElementById('cards-party')
-                    fileContents.innerHTML = fileReader.result+html
+                    fileContents.innerHTML = fileReader.result + html
                 }
-              
 
-         
+
+
 
             }
             else {
@@ -177,7 +180,7 @@ $("#btnImportParty").click(function () {
             }
 
         }, false)
-        
+
     }
     else {
         alert("Arquivo(s) não suportado(s)")
@@ -258,7 +261,7 @@ $("#btnExportEnemies").click(function () {
 
 $("#btnImportEnemies").click(function () {
 
-    var html=$("#cards-enemies").html()
+    var html = $("#cards-enemies").html()
     //Check the support for the File API support
     if (window.File && window.FileReader && window.FileList && window.Blob) {
         let fileSelected = document.getElementById('file_uploadEnemie')
@@ -273,8 +276,8 @@ $("#btnImportEnemies").click(function () {
                 let fileReader = new FileReader()
                 fileReader.onload = function (e) {
                     let fileContents = document.getElementById('cards-enemies')
-                
-                    fileContents.innerHTML =  fileReader.result+html
+
+                    fileContents.innerHTML = fileReader.result + html
                 }
                 fileReader.readAsText(fileTobeRead)
             }
@@ -324,3 +327,117 @@ function uuid() {
 }
 
 
+
+
+
+let diceControl = 6;
+let dice = 4;
+
+function setDice(thisdice) {
+    $("#dice").html(thisdice.toString())
+}
+
+$("#plusDice").click(function () {
+    diceControl++
+
+    formatDice()
+});
+
+
+$("#minusDice").click(function () {
+    diceControl--;
+    formatDice()
+});
+
+function formatDice() {
+
+    switch (diceControl) {
+        case 1: dice = 4
+            break
+        case 2: dice = 6
+            break
+        case 3: dice = 8
+            break
+        case 4: dice = 10
+            break
+        case 5: dice = 12
+            break
+        case 6: dice = 20
+            break
+        case 7: dice = 100
+            break
+        default: dice = 4
+            diceControl = 1
+            break
+    }
+    setDice(dice)
+}
+
+
+let quantity = 1
+
+function setQuantity(thisquant) {
+    $("#quantity").html(thisquant.toString())
+}
+
+$("#plusQtd").click(function () {
+    quantity++
+    setQuantity(quantity)
+});
+
+
+$("#minusQtd").click(function () {
+    quantity--;
+    if (quantity < 1) {
+        quantity = 1
+    }
+    setQuantity(quantity)
+});
+
+
+
+
+let modfier = 0
+
+function setMod(thismod) {
+    let modificador = thismod.toString()
+    if (modificador > 0) {
+        modificador = '+' + thismod.toString()
+    }
+    $("#modifier").html(modificador)
+}
+
+$("#plusmod").click(function () {
+    modfier++
+    setMod(modfier)
+});
+
+
+$("#minusmod").click(function () {
+    modfier--;
+    setMod(modfier)
+});
+
+
+
+$("#btn-dice").click(function () {
+
+    let diceType = parseInt($("#dice").html())
+    let quantidade = parseInt($("#quantity").html())
+    let modificador = parseInt($("#modifier").html())
+    let valRoll = 0
+    for (let i = 0; i < quantidade; i++) {
+        valRoll += rolarDado(diceType)
+    }
+    valRoll+=modificador
+    if(valRoll<1){
+        valRoll=1;
+    }
+
+    $("#resultDice").html(valRoll)
+
+});
+
+function rolarDado(range) {
+    return Math.floor(Math.random() * range + 1)
+}

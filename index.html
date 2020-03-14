@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/9280d503ee.js" crossorigin="anonymous"></script>
     <script src='js/jquery.js'></script>
     <script src='js/FileSaver.js'></script>
-    <script src='js/health.js'></script>
+    <script src='js/dices.js'></script>
     <script src='js/main.js' defer></script>
 
 
@@ -110,10 +110,38 @@
             </div>
         </section>
     </div>
-    <!-- 
-    <section id="charts">
-        <h2>Estatísticas para nerds</h2>
-    </section> -->
+
+    <section id="dices">
+        <div class="title-with-i">
+            <i class="fas fa-dice-d20 icon"></i>
+            <h2>Rolagem de Dados</h2>
+            <i class="fas fa-dice-d20 icon"></i>
+        </div>
+        <div id="dice-card-outside">
+            <div id="dice-card-inside">
+                <div class="dice-options">
+                    <p>D <span id="dice"></span></p>
+                    <i id="plusDice" class="fas fa-plus"></i>
+                    <i id="minusDice" class="fas fa-minus"></i>
+                </div>
+                <div class="dice-options">
+                    <p>Quantidade: <span id="quantity"></span></p>
+                    <i id="plusQtd" class="fas fa-plus"></i>
+                    <i id="minusQtd" class="fas fa-minus"></i>
+                </div>
+                <div class="dice-options">
+                    <p>Modificador:  <span id="modifier"></span></p>
+                    <i id="plusmod" class="fas fa-plus"></i>
+                    <i id="minusmod" class="fas fa-minus"></i>
+                </div>
+                <div class="dice-result">
+
+                    <span id="resultDice"></span>
+                </div>
+               <div class="dice-options"><div id="btn-dice"><p>Roll</p></div></div> 
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
