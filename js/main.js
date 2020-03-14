@@ -18,74 +18,75 @@ $("#btnNewParty").click(function () {
  
     <div id="card${numeroCard}" class="card-out">
     <div class="card-in">
-
-        <div class="title-card">
-            <label>Jogador:</label><span spellcheck="false" contenteditable class="inputs input-px"></span>
-            <i onclick="excluir('${numeroCard}')" class="fas fa-trash"></i>
-            <i onclick="salvar()" class="fas fa-save"></i>
-        </div>
-        <div class="center-image-char" onclick="carregarImagem('imagem${numeroCard}')">
-            <img class="image-char" id="imagem${numeroCard}"
-                src="media/img/57-572389_twenty-sided-dice-20-sided-dice-png-clipart.png">
-        </div>
-        <div class="label-n-input">
-            <label>Nome-Char:</label><span spellcheck="false" contenteditable class="inputs input-px"></span>
-        </div>
-        <div class="label-n-input">
-            <label>Classe:</label><span spellcheck="false" contenteditable class="inputs"></span>
-        </div>
-        <div class="label-n-input">
-            <label>Armour:</label><span spellcheck="false" contenteditable class="inputs"></span>
-        </div>
-        <div class="abilities">
-            <div class="abilitie-inside">
-                <span>STR</span>
-                <span spellcheck="false" contenteditable class="inputs-abilities"></span>
-            </div>
-            <div class="border-abilitie"></div>
-            <div class="abilitie-inside">
-                <span>DEX</span>
-                <span spellcheck="false" contenteditable class="inputs-abilities"></span>
-            </div>
-            <div class="border-abilitie"></div>
-            <div class="abilitie-inside">
-                <span>CON</span>
-                <span spellcheck="false" contenteditable class="inputs-abilities"></span>
-            </div>
-            <div class="border-abilitie"></div>
-            <div class="abilitie-inside">
-                <span>INT</span>
-                <span spellcheck="false" contenteditable class="inputs-abilities"></span>
-            </div>
-            <div class="border-abilitie"></div>
-            <div class="abilitie-inside">
-                <span>WIS</span>
-                <span spellcheck="false" contenteditable class="inputs-abilities"></span>
-            </div>
-            <div class="border-abilitie"></div>
-            <div class="abilitie-inside">
-                <span>CHA</span>
-                <span spellcheck="false" contenteditable class="inputs-abilities"></span>
-            </div>
-
-        </div>
-
-        <div class="label-n-input">
-            <label>Vida:</label><span spellcheck="false" contenteditable class="inputs"
-                onkeypress="vida(event,'${numeroCard}')" id="vida${numeroCard}"></span>
-        </div>
-        <div class="label-n-input">
-            <label>Saving-Throws:</label><span spellcheck="false" contenteditable class="inputs input-menor"></span>
-        </div>
-        <div class="label-n-input">
-            <label>Buffs:</label><span spellcheck="false" contenteditable class="inputs"></span>
-        </div>
-        <div class="label-n-input">
-            <label>Debufs:</label><span spellcheck="false" contenteditable class="inputs"></span>
-        </div>
+    <div class="title-card">
+    <label>Jogador:</label><span spellcheck="false" contenteditable class="inputs input-px"></span>
+    <i onclick="excluir('${numeroCard}')" class="fas fa-trash"></i>
+    <i onclick="salvar()" class="fas fa-save"></i>
+</div>
+<div class="center-image-char" onclick="carregarImagem('imagem${numeroCard}')">
+    <img class="image-char" id="imagem${numeroCard}"
+        src="media/img/57-572389_twenty-sided-dice-20-sided-dice-png-clipart.png">
+</div>
+<div class="label-n-input">
+    <label>Nome-Char:</label><span spellcheck="false" contenteditable class="inputs input-px"></span>
+</div>
+<div class="label-n-input">
+    <label>Classe:</label><span spellcheck="false" contenteditable class="inputs"></span>
+</div>
+<div class="label-n-input">
+    <label>Armour:</label><span spellcheck="false" contenteditable class="inputs"></span>
+</div>
+<div class="abilities">
+    <div class="abilitie-inside">
+        <span>STR</span>
+        <span id="str${numeroCard}" onkeypress="calcularAtribut0(event,'str${numeroCard}')"  spellcheck="false" contenteditable class="inputs-abilities"></span>
     </div>
+    <div class="border-abilitie"></div>
+    <div class="abilitie-inside">
+        <span>DEX</span>
+        <span id="dex${numeroCard}" onkeypress="calcularAtribut0(event,'dex${numeroCard}')"  spellcheck="false" contenteditable class="inputs-abilities"></span>
+    </div>
+    <div class="border-abilitie"></div>
+    <div class="abilitie-inside">
+        <span>CON</span>
+        <span id="con${numeroCard}"  onkeypress="calcularAtribut0(event,'con${numeroCard}')"  spellcheck="false" contenteditable class="inputs-abilities"></span>
+    </div>
+    <div class="border-abilitie"></div>
+    <div class="abilitie-inside">
+        <span>INT</span>
+        <span id="int${numeroCard}" onkeypress="calcularAtribut0(event,'int${numeroCard}')"  spellcheck="false" contenteditable class="inputs-abilities"></span>
+    </div>
+    <div class="border-abilitie"></div>
+    <div class="abilitie-inside">
+        <span>WIS</span>
+        <span id="wis${numeroCard}" onkeypress="calcularAtribut0(event,'wis${numeroCard}')" spellcheck="false" contenteditable class="inputs-abilities"></span>
+    </div>
+    <div class="border-abilitie"></div>
+    <div class="abilitie-inside">
+        <span>CHA</span>
+        <span id="cha${numeroCard}"  onkeypress="calcularAtribut0(event,'cha${numeroCard}')" id="vida${numeroCard}" spellcheck="false" contenteditable class="inputs-abilities"></span>
+    </div>
+
+</div>
+
+<div class="label-n-input">
+    <label>Vida:</label><span spellcheck="false" contenteditable class="inputs"
+        onkeypress="vida(event,'${numeroCard}')" id="vida${numeroCard}"></span>
+</div>
+<div class="label-n-input">
+    <label>Saving-Throws:</label><span spellcheck="false" contenteditable class="inputs input-menor"></span>
+</div>
+<div class="label-n-input">
+    <label>Buffs:</label><span spellcheck="false" contenteditable class="inputs"></span>
+</div>
+<div class="label-n-input">
+    <label>Debufs:</label><span spellcheck="false" contenteditable class="inputs"></span>
+</div>
+</div>
 </div> 
-  
+
+
+
 
    `
 
@@ -429,9 +430,9 @@ $("#btn-dice").click(function () {
     for (let i = 0; i < quantidade; i++) {
         valRoll += rolarDado(diceType)
     }
-    valRoll+=modificador
-    if(valRoll<1){
-        valRoll=1;
+    valRoll += modificador
+    if (valRoll < 1) {
+        valRoll = 1;
     }
 
     $("#resultDice").html(valRoll)
@@ -440,4 +441,46 @@ $("#btn-dice").click(function () {
 
 function rolarDado(range) {
     return Math.floor(Math.random() * range + 1)
+}
+
+
+
+$(".to-roll").click(function () {
+    $("#dices").get(0).scrollIntoView();
+});
+
+$(".to-party").click(function () {
+    $("#party").get(0).scrollIntoView();
+});
+
+$(".to-enemies").click(function () {
+    $("#enemies").get(0).scrollIntoView();
+});
+
+
+function calcularAtribut0(e, idAtributo) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        let target = "#" + idAtributo
+
+        let valor = $(target).html()
+        let atribute = parseInt(valor)
+        if (isNaN(atribute)) {
+            $(target).html("")
+            return 0
+
+        }
+        let atributecalc = Math.trunc((atribute - 10) / 2)
+        let mod
+        if (atributecalc < 0) {
+            mod = `\n${atributecalc}`
+        } else {
+            mod = `\n+${atributecalc}`
+        }
+        let tudoFormatado = `${valor}\n${mod}`
+        $(target).html(tudoFormatado)
+
+        salvar()
+    }
+
 }

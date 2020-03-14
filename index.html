@@ -47,17 +47,23 @@
 
             <div class="hr">
                 <div class="border-hr"></div>
-                <i class="fas fa-dice-d20"></i>
+                <i class="fas fa-dice-d20 to-roll"></i>
                 <div class="border-hr"></div>
             </div>
             <div id="cards-party" class="cards">
 
 
 
+
+               
+                
+
+
+
+
             </div>
-
-
         </section>
+
         <div class="modal-party" id="modalParty">
             <div class="modal-out">
                 <div class="modal-in">
@@ -80,7 +86,7 @@
         <section id="enemies" class="section-borders">
             <header class="header-section">
                 <h2>Enemies</h2>
-                <div onclick="javascript:document.getElementById('file_uploadEnemie').click();" class="btns"
+                <div onclick="javascript:document.getElementById('file_uploadEnemie').click();" class="btns btn-enemie"
                     id="btnImportEnemies">
                     <i class="fas fa-file-download"></i>
                     <span>Importar Enemies</span>
@@ -88,12 +94,12 @@
 
                 </div>
 
-                <div class="btns" id="btnExportEnemies">
+                <div class="btns btn-enemie" id="btnExportEnemies">
                     <i class="fas fa-file-upload"></i>
                     <span>Exportar Enemies</span>
 
                 </div>
-                <div class="btns" id="btnNewEnemie">
+                <div class="btns btn-enemie" id="btnNewEnemie">
                     <i class="fas fa-plus-square"></i>
                     <span>Adicionar novo Enemie</span>
 
@@ -102,7 +108,7 @@
 
             <div class="hr">
                 <div class="border-hr"></div>
-                <i class="fas fa-dragon"></i>
+                <i class="fas fa-dice-d20  to-roll"></i>
                 <div class="border-hr"></div>
             </div>
             <div id="cards-enemies" class="cards">
@@ -113,9 +119,9 @@
 
     <section id="dices">
         <div class="title-with-i">
-            <i class="fas fa-dice-d20 icon"></i>
+            <i class="fas fa-dice-d20 icon to-party"></i>
             <h2>Rolagem de Dados</h2>
-            <i class="fas fa-dice-d20 icon"></i>
+            <i class="fas fa-dice-d20 icon to-enemies"></i>
         </div>
         <div id="dice-card-outside">
             <div id="dice-card-inside">
@@ -130,7 +136,7 @@
                     <i id="minusQtd" class="fas fa-minus"></i>
                 </div>
                 <div class="dice-options">
-                    <p>Modificador:  <span id="modifier"></span></p>
+                    <p>Modificador: <span id="modifier"></span></p>
                     <i id="plusmod" class="fas fa-plus"></i>
                     <i id="minusmod" class="fas fa-minus"></i>
                 </div>
@@ -138,7 +144,11 @@
 
                     <span id="resultDice"></span>
                 </div>
-               <div class="dice-options"><div id="btn-dice"><p>Roll</p></div></div> 
+                <div class="dice-options">
+                    <div id="btn-dice">
+                        <p>Roll</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

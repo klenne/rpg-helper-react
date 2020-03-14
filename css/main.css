@@ -180,6 +180,11 @@ h1 {
     justify-content:center;
     margin-bottom: 5%;
     margin-top: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 130px;
+    padding-left: 130px;
+    border: 2px double;
    
 }
 .abilitie-inside{
@@ -282,7 +287,13 @@ border: none;
     width: 80%;
 }
 
-
+#enemies header{
+    flex-direction: row-reverse;
+}
+.btn-enemie:hover span{
+   left: 40px;
+   
+}
 #dices{
   display: flex;
   align-items: center;
