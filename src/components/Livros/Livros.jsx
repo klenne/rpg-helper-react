@@ -12,24 +12,22 @@ import "./Livro.css";
 
 const Livros = () => {
   const [livro, setLivro] = useState("jogador");
-  const [active, setActive] = useState([true, false, false,false]);
+  const [active, setActive] = useState([true, false, false, false]);
 
   const changeBook = (book, index) => {
     setLivro(book);
     let activeTemp = active;
-    activeTemp.forEach(function(part, index) {
-        this[index] = false;
-      }, activeTemp)
-   active[index]=true;
-   setActive(active);
+    activeTemp.forEach(function (part, index) {
+      this[index] = false;
+    }, activeTemp);
+    active[index] = true;
+    setActive(active);
   };
-
 
   return (
     <>
       <div className="livros">
-
-      <Livro livro={livro} />
+        <Livro livro={livro} />
 
         <nav>
           <ul>
@@ -55,7 +53,8 @@ const Livros = () => {
                 onClick={() => changeBook("monstros", 2)}
               >
                 Manual dos Monstros
-              </span><span
+              </span>
+              <span
                 className={active[3] ? "active" : "inative"}
                 onClick={() => changeBook("mestre", 3)}
               >
@@ -68,5 +67,6 @@ const Livros = () => {
     </>
   );
 };
+
 
 export default Livros;
