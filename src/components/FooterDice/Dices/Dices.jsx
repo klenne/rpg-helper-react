@@ -1,7 +1,7 @@
 import React,{useState}from 'react'
 
 import './Dices.css'
-import Dice from '.././Dice/Dice'
+import Dice from '../Dice/Dice'
 
 
 
@@ -19,7 +19,7 @@ const changeStatus=()=>{
     return (
         <>
             <footer className="footerContainer">
-                <div className="tag" onClick={changeStatus}><span >Dados</span></div>
+                <div className="tag" onClick={changeStatus}><span >DADOS</span></div>
                 <div className={`acordion ${status==0? "closed":"opened"}`} >
 
                     <div className="dices">

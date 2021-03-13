@@ -2,17 +2,14 @@ import './App.css';
 
 
 
-import Dices from './components/Dices/Dices';
+import Main from './components/Main/Main';
 
 function App() {
   return (
     <div className="App">
 
-      <div className="content">
-
-      </div>
-
-      <Dices></Dices>
+     
+      <Main/>
 
     </div>
   );
