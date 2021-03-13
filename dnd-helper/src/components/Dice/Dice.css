@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+.containerDice {
+    margin: .1rem;
+    margin-bottom: .2rem;
+    width: 30vw;
+    height: 24vh;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.headerDice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerDice, .headerDice h2 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.headerDice h2 {
+    font-family: 'MedievalSharp', cursive;
+}
+
+.botoes-qtd {
+    display: flex;
+    flex-direction: row;
+}
+
+.botoes-qtd div {
+    margin: 1px;
+}
+
+.botoes-qtd :first-child {
+    margin-right: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.pointer {
+    cursor: pointer;
+    user-select: none;
+}
+
+.pointer:hover {
+    transform: scale(1.1);
+}
+
+.imgDice img {
+    width: 50px;
+    height: 50px;
+}
+
+img {
+    user-select: none;
+}
+
+.imgDice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.imgDice img:active {
+transform: scale(0.9);
+
+}
+
+
+
+.result {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    max-height: .5em;
+    min-height: .5em;
+    font-weight: bolder;
+}
+
+.resultqtd {
+    min-width: 15px;
+    max-width: 15px;
+    text-align: center;
+}
+
+.resultMod {
+    min-width: 30px;
+    max-width: 30px;
+    text-align: center;
+}
+
+.footerDice {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .containerDice {
+        min-width: 95vw;
+        max-width: 95vw;
+        min-height: 25vh;
+        max-height: 25vh;
+        font-size: 1.5rem;
+        margin: .1rem .3rem;
+    }
+    .imgDice img {
+        width: 80px;
+        height: 80px;
+    }
+    .resultqtd {
+        min-width: 1.5em;
+        max-width: 1.5em;
+        text-align: center;
+    }
+    .resultMod {
+        min-width: 1.5em;
+        max-width: 1.5em;
+        text-align: center;
+    }
+}
