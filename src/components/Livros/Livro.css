@@ -1,0 +1,49 @@
+.pdf {
+    margin-top: 2px;
+    width: 80vw;
+    height: 90vh;
+}
+
+.livros {
+    display: flex;
+}
+
+.livros nav {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.livros ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.livros ul li {
+
+    display: block;
+}
+
+
+.livros  nav ul li span {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .livros  nav ul li span:hover {
+    background-color:rgba(20, 21, 24,.5); 
+  }
+  
+  .livros  nav ul li span.active {
+    background-color:rgb(20, 21, 24); 
+    color:#fff
+  } 
+  .livros  nav ul li span.inative {
+    background-color:none; 
+   
+  }
